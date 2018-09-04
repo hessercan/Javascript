@@ -3,12 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script>
+      function check_value(onoff){
+        switch(onoff){
+           case "On":
+             document.getElementById("myImage").src = "images/pic_bulbon.gif";
+             break;
+           case "Off":
+              document.getElementById("myImage").src = "images/pic_bulboff.gif";
+              break;
+        }
+      }
+    </script>
   </head>
   <body>
-    <form class="" action="index.html" method="post">
-      <input type="radio" name="switch" value="On"> On<br>
-      <input type="radio" name="switch" value="Off" checked="checked"> Off<br>
-      <input type="submit" name="Submit" value="submit">
+
+<img id="myImage" src="images/pic_bulboff.gif" style="width:100px">
+    <form method="post" action="">
+      <input type="radio" name="switch" value="On" onchange="check_value('On')"> On<br>
+      <input type="radio" name="switch" value="Off" onchange="check_value('Off')" checked="checked"> Off<br>
     </form>
+
   </body>
 </html>
